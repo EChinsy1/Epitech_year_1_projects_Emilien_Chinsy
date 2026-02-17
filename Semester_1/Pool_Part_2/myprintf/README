@@ -1,0 +1,19 @@
+This is a README for the first major project of the school my_printf project made by Matteo Maistre and Emilien Chinsy.
+
+In this project we had to recreate the printf function in the most faithful way possible (up to the C99 standard).
+
+if you wish for more information about the intricacies of printf, we recommend this website: https://cplusplus.com/reference/cstdio/printf/
+it is very comprehensive and a lot easier to read than the man, it does say C++ reference but it is still up to date for C
+
+the project files are seperated into different folders:
+Makefile at the root which you can use to compile all our code into a library, you can use our code by compiling your main file using the -L and -l flags to get to our library and the -I flag to get to our my.h (which is located in src/includes/)
+
+"src" will contain all the project files, in src there will be:
+      my_printf at the root
+      "Specifiers" which contains all the files that will be called for each specifier
+      "Format_handling" which will contians the files for format handling
+      "includes" which contains struct.h and my.h which contain respectively, the definition and creation of our array of function pointer containing the specifiers and their associated function
+
+"tests" which will contain the files we use for testing, we run our tests with criterion.
+
+here is a link to an excel spreadsheet which contains our advancement on the project: https://epitechfr-my.sharepoint.com/:x:/g/personal/emilien_chinsy_epitech_eu/EUwh7na9HQRIrbkghpZ3hzsBmuWKqVC9tGYSB5l2PibX6A
