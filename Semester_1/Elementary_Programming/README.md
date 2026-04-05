@@ -14,5 +14,5 @@ Projects:
     - Description: This project was about learning the basics of hash tables.
     - [subject](./subjects/secured.pdf)
 
-**Grade**: Not obtained
-**Flag**: Unknown
+**Grade**: B
+**Flag**: Encouragments

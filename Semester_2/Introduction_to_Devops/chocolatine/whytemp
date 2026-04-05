@@ -1,0 +1,4 @@
+Checking delivery files in .
+./src/main.o: [Banana] [Major] unwanted binary file (C-O1)
+./src/lib.o: [Banana] [Major] unwanted binary file (C-O1)
+./Matchsticks: [Banana] [Major] unwanted binary file (C-O1)

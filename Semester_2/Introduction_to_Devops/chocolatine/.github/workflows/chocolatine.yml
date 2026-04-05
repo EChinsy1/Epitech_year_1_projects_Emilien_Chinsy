@@ -1,0 +1,71 @@
+name: Mirroring
+
+on: 
+  push:
+    branches-ignore:
+      - "no-ga/**"
+  pull_request:
+      branches-ignore:
+      - "no-ga/**"
+
+jobs:
+  check_compilation_and_coding_style:
+    if: ${{github.repository == 'EChinsy1/chocolatine_bs'}}
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker
+    env:
+      CC: epiclang
+    steps:
+      - uses: actions/checkout@v4
+      - name: check
+        run: id && ls -l
+      - name: banana
+        run: |
+          banana-check-repo > log.txt && grep Banana log.txt > tempnana.txt; cat tempnana.txt; 
+      - name: make
+        timeout-minutes: 2
+        run: |
+          make 2> tmp_epi.txt
+          grep Banana tmp_epi.txt > tempmake.txt || true; cat tempmake.txt;
+      - name: show_errors
+        run: |
+          while IFS=':' read -r file error; do
+          echo "::error file=$file,line=$error,title=banana style error::$error"
+          done < tempnana.txt
+          while IFS=':' read -r file line unused1 unused2 error; do
+          echo "::error file=$file,line=$line, title=make style error::$error"
+          done < tempmake.txt
+      - name: checks_errors
+        shell: bash
+        run: |
+          if [ ! -s "tempmake.txt" && ! -s "tempnana.txt"]; then
+            exit 1
+          fi
+      - name: clean
+        run: make clean
+
+  run_tests:
+    needs: check_compilation_and_coding_style
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker  
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - name: run tests
+        run: make tests_run
+  push_to_mirror:
+    if: ${{github.event_name == 'push'}}
+    needs: run_tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url:
+            ${{ vars.MIRROR_SSH_URL }}
+          ssh_private_key:
+            ${{ secrets.GIT_SSH_PRIVATE_KEY }}
+
+# Met en variable target_repo_url

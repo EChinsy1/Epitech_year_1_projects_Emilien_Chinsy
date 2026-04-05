@@ -1,0 +1,7 @@
+src/main.c:16:9: warning: unused variable 'coding_style_breakeraaaaaaaaaaaaaa' [-Wunused-variable]
+   16 |     int coding_style_breakeraaaaaaaaaaaaaa = 0;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/main.c:17:1: warning: [Banana] [Minor] missing blank line after variable declaration section (C-L6)
+   17 |     if (who == 0)
+      | ^
+2 warnings generated.

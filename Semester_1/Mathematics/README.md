@@ -1,5 +1,5 @@
 # Mathematics
-**These are the projects from the Mathematics.**
+**These are the projects from the Mathematics module.**
 This module was about mathematical tools and the basics of scientific programming.
 
 Projects:

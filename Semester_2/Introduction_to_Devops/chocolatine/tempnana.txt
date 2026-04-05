@@ -1,0 +1,5 @@
+./run.sh~: [Banana] [Major] unwanted file (C-O1)
+./src/main.o: [Banana] [Major] unwanted binary file (C-O1)
+./src/lib.o: [Banana] [Major] unwanted binary file (C-O1)
+./Matchsticks: [Banana] [Major] unwanted binary file (C-O1)
+EOF

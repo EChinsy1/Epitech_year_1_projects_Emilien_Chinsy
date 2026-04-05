@@ -1,0 +1,13 @@
+*.o
+*.a
+note
+*~
+a.out
+cesar
+*.log
+test
+le_moral.c
+crypt
+instruction
+unit
+wordle

@@ -1,0 +1,78 @@
+services:
+  db:
+    env_file: ".env"
+    image: postgres:16
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    environment:
+      - POSTGRES_DB=votes
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORDD}
+    networks:
+      - result-tier
+      - back-tier
+    restart: always
+
+  poll:
+    build: ./poll
+    environment:
+      - REDIS_HOST=redis
+    ports:
+      - "5000:80"
+    networks:
+      - poll-tier
+    depends_on:
+      - redis
+    restart: always
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    networks:
+      - poll-tier
+      - back-tier
+    restart: always
+
+  worker:
+    env_file: ".env"
+    build: ./worker
+    environment:
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=votes
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORDD}
+    networks:
+      - back-tier
+    restart: always
+    depends_on:
+      - db
+      - redis
+
+  result:
+    env_file: ".env"
+    build: ./result
+    ports:
+      - "5001:80"
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=votes
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORDD}
+    networks:
+      - result-tier
+    depends_on:
+      - db
+    restart: always
+
+volumes:
+  db-data:
+
+networks:
+  poll-tier: {}
+  result-tier: {}
+  back-tier: {}

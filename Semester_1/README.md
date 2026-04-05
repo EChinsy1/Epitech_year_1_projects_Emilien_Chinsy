@@ -18,17 +18,17 @@ Modules:
     - Flag: Encouragements
 - **Elementary_Programming**
     - Description: This module was about alogrithms, data structures and optimisation techniques.
-    - Grade: Unknown
-    - Flag: Unknown
+    - Grade: B
+    - Flag: Encouragments
 - **Graphical Programming**
     - Description: This module was about learning about basic graphical programming, using the csfml (C Simple Fast Multimedia Library) library.
     - Grade: A
     - Flag: Medal
 - **Unix_Programming:**
     - Description: This projects consist of recoding unix commands, which are the commands you can type into your terminal.
-    - Grade: Unknown
-    - Flag: Unknown
+    - Grade: A
+    - Flag: Medal
 - **Stumpers:**
     - Description: Stumpers are two hour long exams where we can only use a terminal and no internet.
-    - Grade: Unknown
-    - Flag: Unknown
+    - Grade: Obtained
+    - Flag: None
