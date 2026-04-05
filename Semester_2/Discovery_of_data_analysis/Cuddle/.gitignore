@@ -1,0 +1,9 @@
+cuddle
+*.o
+*.csv
+compile_flags.txt
+*.a
+*.py
+./unit_tests*
+unit_tests
+*.gc*
