@@ -1,0 +1,28 @@
+GEEK NAME FORMATTER
+
+binary name: geekNameFormatter
+language: C
+compilation: via Makefile, including re, clean and fclean rules
+
+The totality of your source files, except all useless files (binary, temp files, obj files,...), must be included in your delivery.
+All the bonus files (including a potential specific Makefile) should be in a directory named bonus.
+Error messages have to be written on the error output, and the program should then exit with the 84 error code (0 if there is no error).
+
+For this project, the only authorized function is write.
+
+Write a program that takes a string as parameter representing a name and pretty prints it, according to the following rules:
+- the name can be composed of several words, containing letters, numbers or any printable characters,
+- the characters of every word of the name must be printed alternatively in upper case and in lower case, starting with a capital letter,
+- all the 'o's must be replaced by '0's,
+- all the 'i's must be replaced by '1's,
+- all the 'u's must be replaced by '2's,
+- all the 'e's must be replaced by '3's,
+- all the 'a's must be replaced by '4's,
+- all the 'y's must be replaced by '5's.
+
+$> ./geekNameFormatter 'santa Tomato!KETCHUP/' | cat -e
+S4Nt4 T0M4T0!k3tCh2p/$
+$> ./geekNameFormatter >/dev/null || echo "Exit status: $?"
+Usage: geekNameFormatter string
+Exit status: 84
+

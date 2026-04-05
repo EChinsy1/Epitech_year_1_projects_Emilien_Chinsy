@@ -14,5 +14,5 @@ Projects:
     - Description: This project was about remaking the top command, which is basically a task manager for linux
     - [subject](./subjects/my_top.txt)
 
-**Grade**: Unknown
-**Flag**: Unknown
+**Grade**: A
+**Flag**: Encouragments
