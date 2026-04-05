@@ -5,7 +5,7 @@
 ## makefile for the my_ls project
 ##
 
-CC	=	epiclang
+CC += epiclang
 
 SRC	=	src/main_game/display_window.c		\
 		src/events/events_buttons.c		\

@@ -4,7 +4,7 @@
 ## makefile for the my_ls project
 ##
 
-CC    =    epiclang
+CC    +=    epiclang
 
 SRC_TEST    =    main.c    \
                 src/hash.c    \

@@ -2,7 +2,7 @@
 ## EPITECH PROJECT, 2025
 ## Makefile
 ## File description:
-## makefile for the my_ls project
+## makefile for the setting_up project
 ##
 
 SRC	=	algorithms.c		\

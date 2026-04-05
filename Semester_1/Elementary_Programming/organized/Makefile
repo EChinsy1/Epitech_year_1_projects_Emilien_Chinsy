@@ -5,7 +5,7 @@
 ## makefile for the my_ls project
 ##
 
-CC	=	epiclang
+CC	+=	epiclang
 
 SRC	=	src/helper_functions/free_funcs.c	\
 		src/shell_funcs/add.c			\

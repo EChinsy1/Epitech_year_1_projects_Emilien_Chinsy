@@ -5,7 +5,7 @@
 ## makefile for the my_ls project
 ##
 
-CC	=	epiclang
+CC	+=	epiclang
 
 SRC	=	src/entity_handling/parsing.c	\
 		src/events/events.c		\
