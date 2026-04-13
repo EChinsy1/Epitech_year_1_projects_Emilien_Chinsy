@@ -44,7 +44,7 @@ Improper Input Validation
 
 ## Actions:
 ### Risk mitigation strategies:
-- Block negative prices when proceeding t checkout.
+-  negative prices when proceeding t checkout.
 ### Remediation fixes:
 - Block negative quantities in the basket.
 ### Related best security practices

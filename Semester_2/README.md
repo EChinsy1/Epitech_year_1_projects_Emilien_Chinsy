@@ -6,8 +6,8 @@ Modules:
 
 - **Mathematics**
     - Description: This module was about mathematical tools and the basics of scientific programming.
-    - Grade: A
-    - Flag: Encouragements
+    - Grade: Unknown
+    - Flag: Unknown
 - **Elementary_Programming**
     - Description: This module was about alogrithms, data structures and optimisation techniques.
     - Grade: Unknown

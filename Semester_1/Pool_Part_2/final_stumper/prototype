@@ -1,0 +1,60 @@
+while (buff[i] != '\n'){
+    longueur++;
+}
+
+while (buff[i] !='\0'){
+      if (buff[i] == '\n'){
+          hauteur++;
+      }
+}
+
+if longueur & hauteur == 1
+si o et - c rush1-1
+si / c rush1-2
+si B c rush1-3; rush1-4 et rush1-5
+
+si longueur = 1 & hauteur > 1
+si c que des o et - c rush1-1
+si c que des * c rush1-2
+si c que des b c rush1-3, rush1-4 et rush1-5
+
+si longueur > 1 & hauteur = 1
+la même que au-dessus
+
+si longueur > 1 & hauteur > 1
+les quatres coins
+le reste
+
+si les quatres coins correspondent à ceux d'un carré et que le reste c'est soit le caractère intermédiaire ou espace) c'est celui là
+
+while (carré[i] != '\0'){
+      if caractère == \n;
+         ligne ++;
+      else if ligne = 1
+         if i == 0
+             check caractère en haut à gauche (o)
+         if i == longueur
+             check caractère en haut à droite (o)
+         sinon
+             check caractère ligne (-)
+      else if ligne = hauteur
+         if i == 0
+             check caractère en bas à gauche (o)
+         if i == longueur
+             check caractère en bas à droite (o)
+         sinon
+             check caractère ligne (-)
+      sinon
+         if i == 0 || i == longueur
+              check caractère colonne (|)
+         sinon
+              check espace
+
+}
+
+
+o--o\n
+|  |\n
+|  |\n
+o--o\n
+\o

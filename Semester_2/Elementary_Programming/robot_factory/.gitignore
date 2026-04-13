@@ -1,0 +1,7 @@
+test
+*.o
+robot-factory
+jon*
+chi*
+temp*
+value*

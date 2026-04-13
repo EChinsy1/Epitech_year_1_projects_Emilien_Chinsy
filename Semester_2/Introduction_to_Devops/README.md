@@ -8,7 +8,7 @@ Projects:
 1. **popeye**
     - Description: Introduction to Docker and contenerisation.
     - [subject](./subjects/popeye.pdf)
-1. **chocolatine**
+2. **chocolatine**
     - Description: Introduction to github actions.
     - [subject](./subjects/chocolatine.pdf)
 
