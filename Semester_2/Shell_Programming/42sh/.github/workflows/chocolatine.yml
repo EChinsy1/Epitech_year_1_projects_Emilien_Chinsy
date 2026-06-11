@@ -1,0 +1,95 @@
+name: test-and-mirror
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+
+env:
+  MIRROR_SSH_URL: 'git@github.com:EpitechPGE1-2025/G-PSU-200-PAR-2-1-42sh-2.git'
+  EXECUTABLES: './42sh'
+
+jobs:
+  check_compilation_and_coding_style:
+    env:
+      CC: epiclang
+      ERROR: 0
+    if: ${{ github.repository != 'EpitechPGE1-2025/G-PSU-200-PAR-2-1-42sh-2' }}
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker:latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: banana-check
+        run: banana-check-repo > log.txt || true; cat log.txt | grep Banana > log_banana.txt || true
+      - name: make
+        timeout-minutes: 2
+        run: make 2> log.txt ; cat log.txt | grep Banana > log_clang.txt || true
+      - name: check-errors
+        run: |
+          while IFS=':' read -r file line char warn err; do
+          echo "::error file=$file,line=$line,title=Coding style error::$err";
+          echo "ERROR=1" >> $GITHUB_ENV;
+          done < log_clang.txt ;
+          while IFS=':' read -r file err; do
+          echo "::error file=$file,title=Coding style error::$err"; export ERROR=1 ;
+          echo "ERROR=1" >> $GITHUB_ENV;
+          done < log_banana.txt
+      - name: exit
+        run: |
+          if ${{ env.ERROR == 1}} ;
+          then exit 3 ;
+          fi
+      - name: clean
+        run:
+          make clean
+      - name: check-executables
+        shell: bash
+        run: |
+          IFS=',' read -ra ADDR <<< ${EXECUTABLES}
+          for i in "${ADDR[@]}"; do
+          ls ${i}
+          done
+
+  run_tests:
+    needs: check_compilation_and_coding_style
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker:latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: run-tests
+        timeout-minutes: 2
+        run: make tests_run
+      - name: run-testersh
+        timeout-minutes: 2
+        run: |
+          make re;
+          cp 42sh ./tester/.;
+          cd tester;
+          ./tester.sh;
+          echo "ERROR="$? >> $GITHUB_ENV
+      - name: exit
+        run: |
+          if ${{ env.ERROR == 1}} ;
+          then exit 3 ;
+          fi
+
+  push_to_mirror:
+    needs: run_tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url:
+            ${{ env.MIRROR_SSH_URL }}
+          ssh_private_key:
+            ${{ secrets.GIT_SSH_PRIVATE_KEY }}
