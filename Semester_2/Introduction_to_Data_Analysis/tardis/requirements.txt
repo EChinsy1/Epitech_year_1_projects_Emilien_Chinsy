@@ -1,0 +1,10 @@
+streamlit
+matplotlib
+pandas
+seaborn
+scikit-learn
+numpy
+folium
+fpdf
+math
+webbrowser

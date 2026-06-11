@@ -1,0 +1,11 @@
+*csvs
+*venv*
+*.pkl
+*.csv
+Plots/
+run.sh
+__pycache__/
+.model_error
+*.af
+subject
+*.sh

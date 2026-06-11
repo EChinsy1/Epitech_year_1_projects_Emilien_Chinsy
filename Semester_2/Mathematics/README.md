@@ -13,6 +13,12 @@ Projects:
 3. **108trigo**
     - Description: This project was about applying functions to matrices.
     - [subject](./subjects/108trigo.pdf)
+4. **109titration**
+    - Description: This project was about mathing stuff.
+    - [subject](./subjects/109titration.pdf)
+5. **110borwein**
+    - Description: This project was about using borwein functions to find pi/2.
+    - [subject](./subjects/110borwein.pdf)
 
-**Grade**: None
+**Grade**: A
 **Flag**: None

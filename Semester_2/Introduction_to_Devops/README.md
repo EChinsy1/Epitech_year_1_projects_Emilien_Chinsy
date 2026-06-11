@@ -12,5 +12,5 @@ Projects:
     - Description: Introduction to github actions.
     - [subject](./subjects/chocolatine.pdf)
 
-**Grade**: Not obtained
-**Flag**: Unknown
+**Grade**:A
+**Flag**: Medal

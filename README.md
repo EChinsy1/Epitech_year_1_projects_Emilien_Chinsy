@@ -39,23 +39,27 @@ Semesters:
 2. **Second Semester**
     Modules:
     
+    - **Introduction_to_Devops**
+        - Description: this module was about learning to setup github actions and workflow, and learning to use docker.
+        - Grade: A
+        - Flag: medal
     - **Mathematics**
         - Description: This module was about mathematical tools and the basics of scientific programming.
-        - Grade: Unknown
-        - Flag: Unknown
+        - Grade: A
+        - Flag: None
     - **Elementary_Programming**
         - Description: This module was about alogrithms, data structures and optimisation techniques.
-        - Grade: Unknown
-        - Flag: Unknown
+        - Grade: A
+        - Flag: Encouragement
     - **Discovery of Software Engineering**
         - Description: This module was about learning the basics of software engineering, using the csfml (C Simple Fast Multimedia Library) library.
         - Grade: A
-        - Flag: Medal
+        - Flag: Encouragement
     - **Shell_Programming:**
         - Description: This projects consist of recoding our own UNIX shell like bash
-        - Grade: Unknown
-        - Flag: Unknown
+        - Grade: A
+        - Flag: Medal
     - **Duo Stumpers:**
         - Description: Duo Stumpers are four hour long exams where we can only use a terminal and no internet.
-        - Grade: Unknown
-        - Flag: Unknown
+        - Grade: Obtained
+        - Flag: None

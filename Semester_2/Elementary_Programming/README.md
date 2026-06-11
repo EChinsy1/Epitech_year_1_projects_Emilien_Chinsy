@@ -10,6 +10,9 @@ Projects:
 2. **robot_factory**
     - Description: Takes programs in a simplified version of redcode as an input and transforms them into a binary compiled version of them.
     - [subject](./subjects/amazed.pdf)
+3. **Corewar**
+    - Description: This was about remaking the old corewar game.
+    - [subject](./subjects/corewar.pdf)
 
-**Grade**: Not obtained
-**Flag**: Unknown
+**Grade**: A
+**Flag**: Encouragement
